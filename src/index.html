@@ -183,6 +183,71 @@
       </div>
     </section>
 
+    <section class="mission-control" aria-labelledby="control-title">
+      <div class="control-heading">
+        <p class="eyebrow"><span class="eyebrow-line"></span> Control de misión / 08</p>
+        <h2 id="control-title">Toma el<br><span>control.</span></h2>
+        <p>Selecciona una órbita, calcula una velocidad y observa cómo cambia el perfil de la misión.</p>
+      </div>
+      <div class="control-dashboard">
+        <div class="control-console">
+          <div class="console-bar"><span>MISSION CONSOLE</span><span class="console-live">● LIVE</span></div>
+          <div class="orbit-selector control-module">
+            <div class="module-title"><span>01 / ÓRBITA</span><strong>SELECCIÓN DE VECTOR</strong></div>
+            <input id="orbit-leo" name="orbit" type="radio" checked>
+            <input id="orbit-meo" name="orbit" type="radio">
+            <input id="orbit-geo" name="orbit" type="radio">
+            <div class="selector-tabs">
+              <label for="orbit-leo">LEO</label><label for="orbit-meo">MEO</label><label for="orbit-geo">GEO</label>
+            </div>
+            <div class="orbit-readout">
+              <div class="readout-card readout-leo"><strong>400 km</strong><span>Órbita baja / 7.67 km/s</span><small>Ideal para observación terrestre</small></div>
+              <div class="readout-card readout-meo"><strong>20.200 km</strong><span>Órbita media / 3.87 km/s</span><small>Ideal para navegación global</small></div>
+              <div class="readout-card readout-geo"><strong>35.786 km</strong><span>Órbita geoestacionaria / 3.07 km/s</span><small>Ideal para comunicaciones</small></div>
+            </div>
+          </div>
+
+          <div class="velocity-module control-module">
+            <div class="module-title"><span>02 / VELOCIDAD</span><strong>CALCULADORA ORBITAL</strong></div>
+            <input id="speed-low" name="speed" type="radio" checked>
+            <input id="speed-mid" name="speed" type="radio">
+            <input id="speed-high" name="speed" type="radio">
+            <div class="speed-tabs"><label for="speed-low">BAJA</label><label for="speed-mid">MEDIA</label><label for="speed-high">ALTA</label></div>
+            <div class="speed-value"><strong class="speed-low-value">7.67</strong><strong class="speed-mid-value">3.87</strong><strong class="speed-high-value">3.07</strong><span>km/s<br>velocidad orbital estimada</span></div>
+          </div>
+        </div>
+
+        <div class="telemetry-console">
+          <div class="console-bar"><span>FLIGHT DATA / 07</span><span>UTC 07:42:18</span></div>
+          <div class="mission-status"><span>ESTADO DE MISIÓN</span><strong class="status-preparing">PREPARANDO</strong><strong class="status-orbit">EN ÓRBITA</strong><strong class="status-complete">MISIÓN COMPLETA</strong></div>
+          <div class="fuel-readout"><div><span>COMBUSTIBLE</span><strong>68%</strong></div><div class="fuel-bar"><i></i></div><small>RESERVA NOMINAL / 4.820 KG</small></div>
+          <div class="flight-metrics"><div><span>ALTITUD</span><strong>400<span> km</span></strong></div><div><span>VELOCIDAD</span><strong>7.67<span> km/s</span></strong></div><div><span>DISTANCIA</span><strong>1.240<span> km</span></strong></div></div>
+          <div class="countdown"><span>SECUENCIA DE LANZAMIENTO</span><strong>T− 00:04:27</strong></div>
+          <div class="trajectory-line"><i></i><span>TIERRA</span><b></b><span>ÓRBITA</span></div>
+          <div class="code-stream">THRUST 98.4 // VECTOR 07 // COMM LINK STABLE // APU ONLINE // TRAJECTORY LOCKED //</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="academy" aria-labelledby="academy-title">
+      <div class="academy-heading">
+        <p class="eyebrow"><span class="eyebrow-line"></span> Academia orbital / 09</p>
+        <h2 id="academy-title">Entender para<br><span>llegar más lejos.</span></h2>
+      </div>
+      <div class="academy-grid">
+        <details class="academy-card" open><summary>Glosario técnico <span>+</span></summary><p><strong>Delta-v</strong> es el cambio de velocidad disponible para una maniobra. <strong>Apogeo</strong> es el punto más lejano de una órbita. <strong>Perigeo</strong> es el más cercano.</p></details>
+        <details class="academy-card"><summary>¿Aeronáutica o astronáutica? <span>+</span></summary><p>La aeronáutica estudia vehículos dentro de la atmósfera. La astronáutica diseña vehículos para el espacio. La astrodinámica calcula cómo se mueven ambos sistemas.</p></details>
+        <details class="academy-card"><summary>Satélites y comunicación <span>+</span></summary><p>Los satélites observan la Tierra, sincronizan navegación y conectan continentes. Su órbita determina la cobertura, el retraso y la energía necesaria.</p></details>
+        <details class="academy-card"><summary>Materiales de una nave <span>+</span></summary><p>Titanio para estructuras resistentes, aluminio para reducir masa, compuestos de carbono para rigidez y cerámicas térmicas para el reingreso.</p></details>
+        <details class="academy-card"><summary>Roles en una misión <span>+</span></summary><p>Ingeniería de sistemas, control de vuelo, aviónica, propulsión, ciencia de datos y operaciones trabajan como un solo organismo.</p></details>
+        <details class="academy-card"><summary>Científicas que abrieron camino <span>+</span></summary><p>Katherine Johnson calculó trayectorias orbitales; Annie Easley desarrolló software y modelos para sistemas energéticos espaciales.</p></details>
+      </div>
+      <div class="quiz-panel">
+        <div><span class="eyebrow"><span class="eyebrow-line"></span> Prueba de navegación</span><h3>¿Qué necesita un satélite para mantenerse en órbita?</h3></div>
+        <details><summary>Ver respuesta <span>↗</span></summary><p>Una velocidad tangencial precisa: la gravedad lo atrae hacia la Tierra mientras su movimiento lo hace caer continuamente alrededor de ella.</p></details>
+      </div>
+    </section>
+
     <section class="routes" id="rutas">
       <div class="routes-intro">
         <p class="eyebrow"><span class="eyebrow-line"></span> Elige tu vector</p>

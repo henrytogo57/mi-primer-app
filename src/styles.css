@@ -141,7 +141,7 @@ h2 span { color: #7c858a; }
 .orbit-ring-one { animation: orbit-spin 18s linear infinite; }
 .orbit-ring-two { inset: 5% 18%; transform: rotate(46deg) skewX(18deg); }
 .orbit-ring-three { inset: 25% 0; transform: rotate(-58deg) skewX(-18deg); }
-.orbit-planet { background: radial-gradient(circle at 35% 30%, #bff2ee, #24758a 55%, #0a2138); border-radius: 50%; box-shadow: 0 0 45px rgba(121, 215, 229, .45); height: 24%; left: 38%; position: absolute; top: 38%; width: 24%; }
+.orbit-planet { animation: planet-turn 12s linear infinite; background: radial-gradient(circle at 35% 30%, #bff2ee, #24758a 55%, #0a2138); background-size: 180% 100%; border-radius: 50%; box-shadow: 0 0 45px rgba(121, 215, 229, .45); height: 24%; left: 38%; position: absolute; top: 38%; width: 24%; }
 .orbit-satellite { background: var(--lime); border-radius: 50%; box-shadow: 0 0 0 5px rgba(201, 243, 90, .14), 0 0 18px rgba(201, 243, 90, .8); height: 10px; position: absolute; width: 10px; }
 .orbit-satellite-one { animation: satellite-one 7s linear infinite; }
 .orbit-satellite-two { animation: satellite-two 11s linear infinite; background: var(--cyan); box-shadow: 0 0 0 5px rgba(121, 215, 229, .14), 0 0 18px rgba(121, 215, 229, .8); }
@@ -181,6 +181,79 @@ h2 span { color: #7c858a; }
 .propulsion-card p { color: #526673; font-size: 14px; line-height: 1.5; margin: 0; max-width: 250px; }
 .propulsion-card-active { background: var(--lime); border-color: var(--ink); }
 .propulsion-card-active:hover { background: #d5ff76; }
+
+.mission-control { background: #081725; color: var(--paper); padding: 135px 10vw 150px; }
+.control-heading { display: flex; justify-content: space-between; margin: 0 auto 75px; max-width: 1200px; }
+.control-heading .eyebrow { color: var(--cyan); }
+.control-heading h2 { font-size: clamp(3rem, 5.5vw, 5.7rem); line-height: .9; }
+.control-heading h2 span { color: var(--cyan); }
+.control-heading > p:last-child { color: #a6b7b9; font-size: 14px; line-height: 1.5; margin: 35px 0 0; max-width: 250px; }
+.control-dashboard { display: grid; gap: 18px; grid-template-columns: 1fr 1fr; margin: 0 auto; max-width: 1200px; }
+.control-console, .telemetry-console { background: #102b42; border: 1px solid rgba(121, 215, 229, .25); }
+.console-bar { border-bottom: 1px solid rgba(121, 215, 229, .25); color: var(--cyan); display: flex; font-family: var(--mono); font-size: 9px; justify-content: space-between; letter-spacing: .08em; padding: 14px 18px; }
+.console-live { color: var(--lime); }
+.control-module { border-bottom: 1px solid rgba(121, 215, 229, .2); padding: 26px 24px 30px; }
+.control-module:last-child { border-bottom: 0; }
+.module-title { display: flex; justify-content: space-between; margin-bottom: 22px; }
+.module-title span, .module-title strong { color: #a6b7b9; font-family: var(--mono); font-size: 9px; font-weight: 400; letter-spacing: .08em; }
+.module-title span { color: var(--lime); }
+.orbit-selector input, .velocity-module input { opacity: 0; position: absolute; }
+.selector-tabs, .speed-tabs { display: grid; gap: 5px; grid-template-columns: repeat(3, 1fr); }
+.selector-tabs label, .speed-tabs label { border: 1px solid rgba(121, 215, 229, .3); color: #a6b7b9; cursor: pointer; font-family: var(--mono); font-size: 10px; padding: 12px 8px; text-align: center; transition: background .25s ease, color .25s ease; }
+.selector-tabs label:hover, .speed-tabs label:hover { color: var(--cyan); }
+#orbit-leo:checked ~ .selector-tabs label[for="orbit-leo"], #orbit-meo:checked ~ .selector-tabs label[for="orbit-meo"], #orbit-geo:checked ~ .selector-tabs label[for="orbit-geo"], #speed-low:checked ~ .speed-tabs label[for="speed-low"], #speed-mid:checked ~ .speed-tabs label[for="speed-mid"], #speed-high:checked ~ .speed-tabs label[for="speed-high"] { background: var(--cyan); color: var(--ink); }
+.orbit-readout { margin-top: 24px; min-height: 91px; }
+.readout-card { display: none; }
+#orbit-leo:checked ~ .orbit-readout .readout-leo, #orbit-meo:checked ~ .orbit-readout .readout-meo, #orbit-geo:checked ~ .orbit-readout .readout-geo { display: flex; flex-direction: column; gap: 4px; }
+.readout-card strong { color: var(--paper); font-size: 31px; font-weight: 400; letter-spacing: -.06em; }
+.readout-card span, .readout-card small { color: #a6b7b9; font-family: var(--mono); font-size: 10px; }
+.readout-card small { color: var(--cyan); font-size: 9px; margin-top: 6px; }
+.speed-value { align-items: center; display: flex; gap: 15px; margin-top: 22px; min-height: 48px; }
+.speed-value strong { color: var(--paper); display: none; font-size: 42px; font-weight: 400; letter-spacing: -.08em; }
+#speed-low:checked ~ .speed-value .speed-low-value, #speed-mid:checked ~ .speed-value .speed-mid-value, #speed-high:checked ~ .speed-value .speed-high-value { display: block; }
+.speed-value span { color: #a6b7b9; font-family: var(--mono); font-size: 9px; line-height: 1.4; text-transform: uppercase; }
+.telemetry-console { padding-bottom: 24px; }
+.mission-status { min-height: 105px; padding: 25px 24px 12px; position: relative; }
+.mission-status > span, .fuel-readout span, .flight-metrics span, .countdown span { color: #a6b7b9; display: block; font-family: var(--mono); font-size: 9px; letter-spacing: .08em; }
+.mission-status strong { animation: status-cycle 6s infinite; color: var(--lime); display: block; font-size: 27px; font-weight: 400; letter-spacing: -.06em; margin-top: 15px; position: absolute; }
+.mission-status .status-orbit { animation-delay: 2s; color: var(--cyan); }
+.mission-status .status-complete { animation-delay: 4s; color: #f3d77b; }
+.fuel-readout { border-top: 1px solid rgba(121, 215, 229, .2); padding: 22px 24px; }
+.fuel-readout > div:first-child { align-items: baseline; display: flex; justify-content: space-between; }
+.fuel-readout strong { color: var(--cyan); font-size: 28px; font-weight: 400; }
+.fuel-bar { background: #071827; height: 8px; margin: 12px 0 9px; overflow: hidden; }
+.fuel-bar i { animation: fuel-shift 4s ease-in-out infinite alternate; background: linear-gradient(90deg, var(--lime), var(--cyan)); display: block; height: 100%; transform-origin: left; width: 68%; }
+.fuel-readout small { color: #6e929d; font-family: var(--mono); font-size: 8px; }
+.flight-metrics { border-bottom: 1px solid rgba(121, 215, 229, .2); border-top: 1px solid rgba(121, 215, 229, .2); display: grid; grid-template-columns: repeat(3, 1fr); padding: 20px 24px; }
+.flight-metrics div + div { border-left: 1px solid rgba(121, 215, 229, .2); padding-left: 15px; }
+.flight-metrics strong { display: block; font-size: 22px; font-weight: 400; margin-top: 9px; }
+.flight-metrics strong span { color: #6e929d; display: inline; font-size: 9px; }
+.countdown { align-items: center; display: flex; justify-content: space-between; padding: 22px 24px 5px; }
+.countdown strong { animation: countdown-pulse 1.8s ease-in-out infinite; color: #f3d77b; font-family: var(--mono); font-size: 15px; font-weight: 400; }
+.trajectory-line { align-items: center; display: flex; gap: 12px; padding: 25px 24px 8px; }
+.trajectory-line i { animation: trajectory-flow 2s linear infinite; background: linear-gradient(90deg, transparent, var(--cyan), transparent); border-radius: 50%; display: block; height: 2px; position: relative; width: 100%; }
+.trajectory-line i::after { border: 1px solid var(--cyan); border-radius: 50%; content: ""; height: 26px; left: 34%; position: absolute; top: -13px; transform: rotate(-12deg); width: 32%; }
+.trajectory-line span { color: #6e929d; font-family: var(--mono); font-size: 8px; white-space: nowrap; }
+.code-stream { animation: code-slide 18s linear infinite; color: #3d7080; font-family: var(--mono); font-size: 8px; margin-top: 16px; overflow: hidden; padding: 0 24px; white-space: nowrap; }
+
+.academy { background: #d6e1e2; padding: 135px 10vw 145px; }
+.academy-heading { margin: 0 auto 75px; max-width: 1200px; }
+.academy-heading h2 { font-size: clamp(3rem, 5.5vw, 5.7rem); line-height: .9; }
+.academy-heading h2 span { color: #487b89; }
+.academy-grid { display: grid; gap: 1px; grid-template-columns: repeat(3, 1fr); margin: 0 auto; max-width: 1200px; }
+.academy-card { background: rgba(232, 238, 240, .65); border: 1px solid rgba(10, 23, 40, .13); min-height: 145px; padding: 22px; }
+.academy-card summary { align-items: center; cursor: pointer; display: flex; font-size: 19px; justify-content: space-between; letter-spacing: -.04em; list-style: none; }
+.academy-card summary::-webkit-details-marker { display: none; }
+.academy-card summary span { color: #668d18; font-family: var(--mono); font-size: 20px; transition: transform .25s ease; }
+.academy-card[open] summary span { transform: rotate(45deg); }
+.academy-card p { color: #526673; font-size: 13px; line-height: 1.55; margin: 22px 0 0; }
+.academy-card p strong { color: #0a1728; font-weight: 600; }
+.quiz-panel { align-items: end; border-top: 1px solid var(--line); display: grid; gap: 10%; grid-template-columns: 1.1fr .9fr; margin: 70px auto 0; max-width: 1200px; padding-top: 28px; }
+.quiz-panel .eyebrow { margin-bottom: 18px; }
+.quiz-panel h3 { font-size: clamp(1.5rem, 2.7vw, 2.5rem); font-weight: 400; letter-spacing: -.05em; margin: 0; max-width: 550px; }
+.quiz-panel details { border: 1px solid var(--ink); padding: 18px; }
+.quiz-panel summary { cursor: pointer; display: flex; font-family: var(--mono); font-size: 10px; justify-content: space-between; text-transform: uppercase; }
+.quiz-panel details p { color: #526673; font-size: 13px; line-height: 1.5; margin: 18px 0 0; }
 
 .routes { animation: rise-in .9s .75s both; background: radial-gradient(circle at 84% 15%, rgba(121, 215, 229, .16), transparent 25%), #0a2138; color: var(--paper); display: grid; gap: 10%; grid-template-columns: .75fr 1.25fr; padding: 130px 10vw 140px; }
 .routes .eyebrow { color: var(--cyan); }
@@ -278,6 +351,37 @@ footer { display: flex; font-family: var(--mono); font-size: 9px; justify-conten
   50% { opacity: 1; transform: scale(1.35); }
 }
 
+@keyframes status-cycle {
+  0%, 25% { opacity: 1; transform: translateY(0); }
+  30%, 100% { opacity: 0; transform: translateY(5px); }
+}
+
+@keyframes fuel-shift {
+  from { transform: scaleX(.92); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes countdown-pulse {
+  0%, 100% { opacity: .65; }
+  50% { opacity: 1; text-shadow: 0 0 12px rgba(243, 215, 123, .6); }
+}
+
+@keyframes trajectory-flow {
+  from { opacity: .25; transform: translateX(-8%); }
+  50% { opacity: 1; }
+  to { opacity: .25; transform: translateX(8%); }
+}
+
+@keyframes code-slide {
+  from { transform: translateX(20%); }
+  to { transform: translateX(-45%); }
+}
+
+@keyframes planet-turn {
+  from { background-position: 0 0; }
+  to { background-position: 100% 0; }
+}
+
 @media (max-width: 760px) {
   .site-header { padding: 22px 6vw; }
   nav { display: none; }
@@ -320,6 +424,25 @@ footer { display: flex; font-family: var(--mono); font-size: 9px; justify-conten
   .propulsion-heading h2 { margin-top: 48px; }
   .propulsion-grid { display: block; }
   .propulsion-card, .propulsion-card + .propulsion-card, .propulsion-card:last-child { border: 0; border-top: 1px solid var(--line); min-height: 250px; padding: 25px 0 35px; }
+  .mission-control { padding: 100px 7vw 115px; }
+  .control-heading { display: block; margin-bottom: 65px; }
+  .control-heading h2 { margin-top: 48px; }
+  .control-dashboard { display: block; }
+  .telemetry-console { margin-top: 18px; }
+  .control-module { padding: 25px 18px 28px; }
+  .module-title { gap: 15px; }
+  .module-title strong { text-align: right; }
+  .flight-metrics { padding-left: 18px; padding-right: 18px; }
+  .flight-metrics div + div { padding-left: 10px; }
+  .countdown { align-items: flex-start; flex-direction: column; gap: 12px; padding-left: 18px; padding-right: 18px; }
+  .trajectory-line { padding-left: 18px; padding-right: 18px; }
+  .academy { padding: 100px 7vw 115px; }
+  .academy-heading { margin-bottom: 60px; }
+  .academy-grid { display: block; }
+  .academy-card { min-height: auto; }
+  .academy-card + .academy-card { border-top: 0; }
+  .quiz-panel { display: block; margin-top: 60px; }
+  .quiz-panel details { margin-top: 28px; }
   .mission-builder { min-height: 620px; padding: 100px 7vw; }
   .builder-copy h2 { font-size: clamp(3.8rem, 16vw, 6.2rem); }
   .builder-orbit { height: 430px; right: -50%; top: 28%; width: 620px; }
