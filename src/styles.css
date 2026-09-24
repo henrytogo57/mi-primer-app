@@ -69,6 +69,7 @@ h1 em { color: #78818a; font-style: normal; }
 .primary-button { align-items: center; background: var(--ink); color: var(--paper); display: inline-flex; font-family: var(--mono); font-size: 11px; gap: 28px; padding: 17px 19px; text-transform: uppercase; transition: background .2s ease, transform .2s ease; }
 .primary-button:hover { background: #17637b; transform: translateY(-3px); }
 .hero-visual { animation: reveal-space 1.3s .15s both; background: linear-gradient(165deg, rgba(6, 25, 46, .15), transparent 45%), url("https://images.unsplash.com/photo-1536431311719-398b6704d4cc?auto=format&fit=crop&w=1200&q=85") center/cover; min-height: 620px; position: relative; }
+.hero-visual::before { animation: orbit-spin 18s linear infinite; border: 1px solid rgba(121, 215, 229, .55); border-radius: 50%; content: ""; height: 260px; left: 12%; position: absolute; top: 16%; transform: rotate(-24deg); width: 470px; z-index: 1; }
 .hero-visual::after { background: linear-gradient(0deg, rgba(5, 19, 40, .65), transparent 35%); content: ""; inset: 0; position: absolute; }
 .visual-label, .visual-caption { color: white; font-family: var(--mono); font-size: 10px; letter-spacing: .07em; position: absolute; z-index: 1; }
 .visual-label-top { right: 26px; top: 26px; }
@@ -86,6 +87,9 @@ h2 span { color: #7c858a; }
 .stat + .stat { padding-left: 20px; }
 .stat:last-child { border: 0; }
 .stat strong, .route-number { color: #668d18; font-family: var(--mono); font-size: 24px; font-weight: 500; letter-spacing: -.06em; }
+.stat strong { animation: number-flicker 4s ease-in-out infinite; }
+.stat:nth-child(2) strong { animation-delay: .7s; }
+.stat:nth-child(3) strong { animation-delay: 1.4s; }
 .stat span { font-size: 18px; line-height: 1.1; }
 
 .mission-log { animation: rise-in .9s .45s both; background: #d6e1e2; padding: 125px 10vw 135px; }
@@ -102,8 +106,8 @@ h2 span { color: #7c858a; }
 .mission-card-featured .mission-icon { color: var(--ink); }
 .mission-card h3 { font-size: clamp(2rem, 3vw, 3.2rem); font-weight: 400; letter-spacing: -.06em; margin: 65px 0 20px; }
 .mission-card p { color: #515b56; font-size: 14px; line-height: 1.5; margin: 0; max-width: 250px; }
-.mission-tag { bottom: 0; color: #66706a; font-family: var(--mono); font-size: 9px; left: 35px; position: absolute; text-transform: uppercase; }
-.mission-card:first-child .mission-tag { left: 0; }
+.mission-tag { bottom: 22px; color: #66706a; font-family: var(--mono); font-size: 9px; left: 35px; position: absolute; text-transform: uppercase; }
+.mission-card:first-child .mission-tag { left: 28px; }
 .mission-card-featured .mission-tag { color: #516112; left: 35px; }
 
 .astrodynamics { animation: rise-in .9s .6s both; background: radial-gradient(circle at 12% 70%, rgba(121, 215, 229, .2), transparent 24%), var(--paper); display: grid; gap: 8%; grid-template-columns: .8fr 1.2fr; margin: 0 auto; max-width: 1200px; padding: 145px 5vw 155px; }
@@ -127,7 +131,8 @@ h2 span { color: #7c858a; }
 .route:hover { color: var(--cyan); padding-left: 12px; }
 .route strong { display: block; font-size: clamp(1.7rem, 3vw, 2.8rem); font-weight: 400; letter-spacing: -.05em; }
 .route small { color: #8f9894; display: block; font-family: var(--mono); font-size: 10px; margin-top: 8px; text-transform: uppercase; }
-.route-arrow { font-size: 24px; font-weight: 300; }
+.route-arrow { font-size: 24px; font-weight: 300; transition: transform .3s ease; }
+.route:hover .route-arrow { transform: translate(5px, -5px); }
 
 .future { animation: rise-in .9s .9s both; background: #b9ccd1; display: grid; grid-template-columns: 1.1fr .9fr; min-height: 630px; }
 .future-image { animation: image-float 12s ease-in-out infinite alternate; background: url("https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1200&q=85") center/cover; min-height: 630px; }
@@ -168,6 +173,17 @@ footer { display: flex; font-family: var(--mono); font-size: 9px; justify-conten
   to { background-position: center 54%; }
 }
 
+@keyframes orbit-spin {
+  from { transform: rotate(-24deg) scale(1); }
+  50% { opacity: .35; }
+  to { transform: rotate(336deg) scale(1.04); }
+}
+
+@keyframes number-flicker {
+  0%, 100% { opacity: .72; text-shadow: 0 0 0 rgba(121, 215, 229, 0); }
+  50% { opacity: 1; text-shadow: 0 0 15px rgba(121, 215, 229, .35); }
+}
+
 @media (max-width: 760px) {
   .site-header { padding: 22px 6vw; }
   nav { display: none; }
@@ -187,7 +203,7 @@ footer { display: flex; font-family: var(--mono); font-size: 9px; justify-conten
   .mission-card, .mission-card:first-child, .mission-card:last-child { border: 0; border-top: 1px solid var(--line); min-height: 260px; padding: 25px 0 45px; }
   .mission-card-featured { margin: 0; padding-top: 25px; transform: none; }
   .mission-card h3 { margin: 35px 0 15px; }
-  .mission-tag, .mission-card:first-child .mission-tag, .mission-card-featured .mission-tag { bottom: 0; left: 0; }
+  .mission-tag, .mission-card:first-child .mission-tag, .mission-card-featured .mission-tag { bottom: 22px; left: 0; }
   .astrodynamics { display: block; padding: 100px 7vw 115px; }
   .astrodynamics-body { padding-top: 55px; }
   .astrodynamics-lead { margin-bottom: 60px; }
