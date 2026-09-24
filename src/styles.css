@@ -42,7 +42,7 @@ nav a:hover, .header-link:hover, .text-link:hover { color: #7a9e13; }
 main { overflow: hidden; }
 .hero { display: grid; grid-template-columns: minmax(340px, .92fr) 1.08fr; margin: 50px auto 0; max-width: 1440px; min-height: 620px; padding: 0 5vw; }
 .hero-copy { align-self: center; padding: 30px 9% 80px 0; }
-.eyebrow { align-items: center; display: flex; font-family: var(--mono); font-size: 10px; gap: 12px; letter-spacing: .08em; margin: 0 0 28px; text-transform: uppercase; }
+.eyebrow { align-items: center; display: flex; font-family: var(--mono); font-size: 12px; gap: 12px; letter-spacing: .08em; margin: 0 0 28px; text-transform: uppercase; }
 .eyebrow-line { background: currentColor; display: inline-block; height: 1px; width: 33px; }
 h1, h2 { font-weight: 500; letter-spacing: -.065em; margin: 0; }
 h1 { font-size: clamp(4.2rem, 8vw, 8.2rem); line-height: .88; }
@@ -69,6 +69,22 @@ h2 span { color: #7c858a; }
 .stat:last-child { border: 0; }
 .stat strong, .route-number { color: #7a9e13; font-family: var(--mono); font-size: 11px; font-weight: 400; }
 .stat span { font-size: 14px; line-height: 1.1; }
+
+.mission-log { background: #d4d8d1; padding: 125px 10vw 135px; }
+.mission-heading { display: flex; justify-content: space-between; margin: 0 auto 70px; max-width: 1200px; }
+.mission-heading h2 { font-size: clamp(3rem, 5.5vw, 5.7rem); line-height: .9; }
+.mission-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin: 0 auto; max-width: 1200px; }
+.mission-card { border-left: 1px solid var(--line); min-height: 300px; padding: 0 35px; position: relative; }
+.mission-card:first-child { padding-left: 0; }
+.mission-card:last-child { border-right: 1px solid var(--line); }
+.mission-card-featured { background: var(--lime); border-color: var(--ink); padding-top: 28px; transform: translateY(-28px); }
+.mission-icon { color: #7a9e13; font-family: var(--mono); font-size: 11px; }
+.mission-card-featured .mission-icon { color: var(--ink); }
+.mission-card h3 { font-size: clamp(2rem, 3vw, 3.2rem); font-weight: 400; letter-spacing: -.06em; margin: 65px 0 20px; }
+.mission-card p { color: #515b56; font-size: 14px; line-height: 1.5; margin: 0; max-width: 250px; }
+.mission-tag { bottom: 0; color: #66706a; font-family: var(--mono); font-size: 9px; left: 35px; position: absolute; text-transform: uppercase; }
+.mission-card:first-child .mission-tag { left: 0; }
+.mission-card-featured .mission-tag { color: #516112; left: 35px; }
 
 .routes { background: var(--ink); color: var(--paper); display: grid; gap: 10%; grid-template-columns: .75fr 1.25fr; padding: 130px 10vw 140px; }
 .routes .eyebrow { color: var(--lime); }
@@ -98,7 +114,16 @@ footer { display: flex; font-family: var(--mono); font-size: 9px; justify-conten
   .hero-visual, .future-image { min-height: 420px; }
   .visual-caption { bottom: 20px; left: 20px; right: auto; }
   .discipline { display: block; padding: 105px 6vw; }
+  .eyebrow { font-size: 11px; }
   .large-copy { margin: 55px 0 65px; }
+  .mission-log { padding: 100px 7vw 115px; }
+  .mission-heading { display: block; margin-bottom: 65px; }
+  .mission-heading h2 { margin-top: 48px; }
+  .mission-grid { display: block; }
+  .mission-card, .mission-card:first-child, .mission-card:last-child { border: 0; border-top: 1px solid var(--line); min-height: 260px; padding: 25px 0 45px; }
+  .mission-card-featured { margin: 0; padding-top: 25px; transform: none; }
+  .mission-card h3 { margin: 35px 0 15px; }
+  .mission-tag, .mission-card:first-child .mission-tag, .mission-card-featured .mission-tag { bottom: 0; left: 0; }
   .routes { display: block; padding: 100px 7vw; }
   .route-list { margin-top: 70px; }
   .route { gap: 12px; grid-template-columns: 25px 1fr 20px; }
