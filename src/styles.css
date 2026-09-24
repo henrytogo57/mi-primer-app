@@ -123,6 +123,65 @@ h2 span { color: #7c858a; }
 .orbit-card h3 { font-size: clamp(1.5rem, 2.4vw, 2.3rem); font-weight: 400; letter-spacing: -.05em; margin: 60px 0 18px; }
 .orbit-card p { color: #59625d; font-size: 13px; line-height: 1.5; margin: 0; max-width: 180px; }
 
+.mission-timeline { background: #0a2138; color: var(--paper); display: grid; gap: 10%; grid-template-columns: .8fr 1.2fr; padding: 135px 10vw 145px; }
+.mission-timeline .eyebrow, .telemetry .eyebrow, .mission-builder .eyebrow { color: var(--cyan); }
+.timeline-heading h2, .propulsion-heading h2 { font-size: clamp(3rem, 5.5vw, 5.7rem); line-height: .9; }
+.timeline-heading h2 span, .propulsion-heading h2 span { color: #92b8c4; }
+.timeline-list { border-top: 1px solid rgba(232, 238, 240, .3); }
+.timeline-entry { align-items: start; border-bottom: 1px solid rgba(232, 238, 240, .3); display: grid; gap: 25px; grid-template-columns: 70px 1fr 115px; padding: 28px 0; transition: color .3s ease, padding .3s ease; }
+.timeline-entry:hover { color: var(--cyan); padding-left: 12px; }
+.timeline-year, .timeline-status { color: var(--lime); font-family: var(--mono); font-size: 11px; }
+.timeline-entry h3 { font-size: clamp(1.5rem, 2.5vw, 2.4rem); font-weight: 400; letter-spacing: -.05em; margin: 0 0 12px; }
+.timeline-entry p { color: #a6b7b9; font-size: 13px; line-height: 1.5; margin: 0; max-width: 340px; }
+.timeline-status { color: #8ea9b1; font-size: 9px; line-height: 1.5; text-align: right; text-transform: uppercase; }
+
+.orbit-lab { align-items: center; background: #d6e1e2; display: grid; gap: 10%; grid-template-columns: 1fr 1fr; min-height: 650px; padding: 110px 10vw; }
+.orbit-map { aspect-ratio: 1; max-width: 560px; position: relative; width: 100%; }
+.orbit-ring { border: 1px solid rgba(10, 23, 40, .3); border-radius: 50%; inset: 14%; position: absolute; transform: rotate(-24deg) skewX(-12deg); }
+.orbit-ring-one { animation: orbit-spin 18s linear infinite; }
+.orbit-ring-two { inset: 5% 18%; transform: rotate(46deg) skewX(18deg); }
+.orbit-ring-three { inset: 25% 0; transform: rotate(-58deg) skewX(-18deg); }
+.orbit-planet { background: radial-gradient(circle at 35% 30%, #bff2ee, #24758a 55%, #0a2138); border-radius: 50%; box-shadow: 0 0 45px rgba(121, 215, 229, .45); height: 24%; left: 38%; position: absolute; top: 38%; width: 24%; }
+.orbit-satellite { background: var(--lime); border-radius: 50%; box-shadow: 0 0 0 5px rgba(201, 243, 90, .14), 0 0 18px rgba(201, 243, 90, .8); height: 10px; position: absolute; width: 10px; }
+.orbit-satellite-one { animation: satellite-one 7s linear infinite; }
+.orbit-satellite-two { animation: satellite-two 11s linear infinite; background: var(--cyan); box-shadow: 0 0 0 5px rgba(121, 215, 229, .14), 0 0 18px rgba(121, 215, 229, .8); }
+.orbit-lab-copy { max-width: 510px; }
+.orbit-lab-copy h2 { font-size: clamp(3rem, 5.5vw, 5.7rem); line-height: .9; }
+.orbit-lab-copy h2 span { color: #487b89; }
+.orbit-types { border-top: 1px solid var(--line); margin-top: 60px; }
+.orbit-type { align-items: center; border-bottom: 1px solid var(--line); display: grid; gap: 20px; grid-template-columns: 65px 1fr; padding: 17px 0; }
+.orbit-type strong { color: #668d18; font-family: var(--mono); font-size: 15px; }
+.orbit-type span { color: #526673; font-family: var(--mono); font-size: 10px; text-transform: uppercase; }
+
+.telemetry { background: #071827; color: var(--paper); display: grid; gap: 12%; grid-template-columns: .8fr 1.2fr; padding: 135px 10vw; }
+.telemetry-copy { align-self: center; }
+.telemetry h2 { font-size: clamp(3rem, 5.5vw, 5.7rem); line-height: .9; }
+.telemetry h2 span { color: var(--cyan); }
+.telemetry-copy > p:last-child { color: #a6b7b9; font-size: 15px; line-height: 1.55; margin: 45px 0 0; max-width: 300px; }
+.radar-panel { aspect-ratio: 1; background: radial-gradient(circle, transparent 0 12%, rgba(121, 215, 229, .12) 12.2% 12.5%, transparent 12.7% 34%, rgba(121, 215, 229, .12) 34.2% 34.5%, transparent 34.7% 56%, rgba(121, 215, 229, .12) 56.2% 56.5%, transparent 56.7%), repeating-conic-gradient(from 0deg, rgba(121, 215, 229, .1) 0deg 1deg, transparent 1deg 45deg), #091f31; border: 1px solid rgba(121, 215, 229, .4); border-radius: 50%; margin: auto; max-width: 470px; overflow: hidden; position: relative; width: 100%; }
+.radar-panel::before { border: 1px solid rgba(121, 215, 229, .2); border-radius: 50%; content: ""; inset: 7%; position: absolute; }
+.radar-sweep { animation: radar-sweep 4s linear infinite; background: conic-gradient(from 0deg, transparent 0 78%, rgba(121, 215, 229, .7) 86%, transparent 89%); inset: 0; position: absolute; }
+.radar-point { animation: radar-blip 2.8s ease-in-out infinite; background: var(--lime); border-radius: 50%; box-shadow: 0 0 13px var(--lime); height: 8px; position: absolute; width: 8px; z-index: 1; }
+.radar-point-one { left: 61%; top: 28%; }
+.radar-point-two { animation-delay: 1s; left: 30%; top: 62%; }
+.radar-point-three { animation-delay: 1.8s; left: 72%; top: 70%; }
+.radar-data { bottom: 20%; display: flex; flex-direction: column; left: 0; position: absolute; right: 0; text-align: center; z-index: 1; }
+.radar-data span, .radar-data small { color: var(--cyan); font-family: var(--mono); font-size: 9px; letter-spacing: .08em; }
+.radar-data strong { color: var(--paper); font-size: clamp(2.6rem, 5vw, 4.5rem); font-weight: 400; letter-spacing: -.08em; margin: 4px 0; }
+
+.propulsion { background: #c1d4d6; padding: 135px 10vw 150px; }
+.propulsion-heading { display: flex; justify-content: space-between; margin: 0 auto 80px; max-width: 1200px; }
+.propulsion-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin: 0 auto; max-width: 1200px; }
+.propulsion-card { border-left: 1px solid var(--line); min-height: 285px; padding: 25px 35px 0 0; transition: background .3s ease, transform .3s ease; }
+.propulsion-card + .propulsion-card { padding-left: 35px; }
+.propulsion-card:last-child { border-right: 1px solid var(--line); }
+.propulsion-card:hover { background: rgba(121, 215, 229, .22); transform: translateY(-8px); }
+.propulsion-card > span { color: #668d18; font-family: var(--mono); font-size: 10px; }
+.propulsion-card h3 { font-size: clamp(1.7rem, 2.7vw, 2.7rem); font-weight: 400; letter-spacing: -.06em; margin: 65px 0 18px; }
+.propulsion-card p { color: #526673; font-size: 14px; line-height: 1.5; margin: 0; max-width: 250px; }
+.propulsion-card-active { background: var(--lime); border-color: var(--ink); }
+.propulsion-card-active:hover { background: #d5ff76; }
+
 .routes { animation: rise-in .9s .75s both; background: radial-gradient(circle at 84% 15%, rgba(121, 215, 229, .16), transparent 25%), #0a2138; color: var(--paper); display: grid; gap: 10%; grid-template-columns: .75fr 1.25fr; padding: 130px 10vw 140px; }
 .routes .eyebrow { color: var(--cyan); }
 .routes-intro > p:last-child { color: #a9b0ad; font-size: 14px; line-height: 1.5; margin-top: 45px; max-width: 270px; }
@@ -140,6 +199,16 @@ h2 span { color: #7c858a; }
 .future-copy .eyebrow { color: #527318; }
 .future-copy > p:not(.eyebrow) { color: #3f5863; font-size: 16px; line-height: 1.55; margin: 40px 0 35px; max-width: 340px; }
 .text-link { border-bottom: 1px solid var(--ink); display: inline-flex; font-family: var(--mono); font-size: 10px; gap: 15px; padding-bottom: 7px; text-transform: uppercase; transition: color .2s ease; }
+
+.mission-builder { background: radial-gradient(circle at 75% 45%, rgba(121, 215, 229, .16), transparent 24%), #0a1728; color: var(--paper); min-height: 560px; overflow: hidden; padding: 125px 10vw; position: relative; }
+.builder-copy { position: relative; z-index: 1; }
+.builder-copy h2 { font-size: clamp(4rem, 8vw, 8rem); line-height: .85; }
+.builder-copy h2 em { color: var(--cyan); font-style: normal; }
+.builder-copy > p:not(.eyebrow) { color: #a6b7b9; font-size: 16px; line-height: 1.5; margin: 35px 0; max-width: 355px; }
+.builder-orbit { border: 1px solid rgba(121, 215, 229, .28); border-radius: 50%; height: 650px; position: absolute; right: -5%; top: -12%; transform: rotate(-24deg) skewX(-12deg); width: 900px; }
+.builder-orbit-one { animation: orbit-spin 24s linear infinite; }
+.builder-orbit-two { animation: orbit-spin 32s linear infinite reverse; height: 430px; right: 4%; top: 8%; width: 610px; }
+.builder-coordinate { bottom: 32px; color: var(--cyan); font-family: var(--mono); font-size: 9px; line-height: 1.6; position: absolute; right: 10vw; text-align: right; }
 
 footer { display: flex; font-family: var(--mono); font-size: 9px; justify-content: space-between; letter-spacing: .05em; padding: 25px 5vw; text-transform: uppercase; }
 
@@ -184,6 +253,31 @@ footer { display: flex; font-family: var(--mono); font-size: 9px; justify-conten
   50% { opacity: 1; text-shadow: 0 0 15px rgba(121, 215, 229, .35); }
 }
 
+@keyframes satellite-one {
+  from { left: 15%; top: 32%; }
+  25% { left: 68%; top: 16%; }
+  50% { left: 83%; top: 68%; }
+  75% { left: 30%; top: 84%; }
+  to { left: 15%; top: 32%; }
+}
+
+@keyframes satellite-two {
+  from { left: 76%; top: 31%; }
+  25% { left: 57%; top: 83%; }
+  50% { left: 12%; top: 61%; }
+  75% { left: 35%; top: 10%; }
+  to { left: 76%; top: 31%; }
+}
+
+@keyframes radar-sweep {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes radar-blip {
+  0%, 100% { opacity: .25; transform: scale(.75); }
+  50% { opacity: 1; transform: scale(1.35); }
+}
+
 @media (max-width: 760px) {
   .site-header { padding: 22px 6vw; }
   nav { display: none; }
@@ -211,6 +305,26 @@ footer { display: flex; font-family: var(--mono); font-size: 9px; justify-conten
   .orbit-card, .orbit-card + .orbit-card { border: 0; border-bottom: 1px solid var(--line); min-height: 220px; padding: 25px 0 35px; }
   .orbit-card:last-child { border-bottom: 0; }
   .orbit-card h3 { margin: 35px 0 15px; }
+  .mission-timeline { display: block; padding: 100px 7vw 115px; }
+  .timeline-heading h2 { margin-top: 48px; }
+  .timeline-list { margin-top: 65px; }
+  .timeline-entry { gap: 12px; grid-template-columns: 55px 1fr; }
+  .timeline-status { grid-column: 2; text-align: left; }
+  .orbit-lab { display: block; padding: 90px 7vw 110px; }
+  .orbit-map { margin: 0 auto 75px; }
+  .orbit-types { margin-top: 55px; }
+  .telemetry { display: block; padding: 100px 7vw 115px; }
+  .radar-panel { margin-top: 70px; }
+  .propulsion { padding: 100px 7vw 115px; }
+  .propulsion-heading { display: block; margin-bottom: 65px; }
+  .propulsion-heading h2 { margin-top: 48px; }
+  .propulsion-grid { display: block; }
+  .propulsion-card, .propulsion-card + .propulsion-card, .propulsion-card:last-child { border: 0; border-top: 1px solid var(--line); min-height: 250px; padding: 25px 0 35px; }
+  .mission-builder { min-height: 620px; padding: 100px 7vw; }
+  .builder-copy h2 { font-size: clamp(3.8rem, 16vw, 6.2rem); }
+  .builder-orbit { height: 430px; right: -50%; top: 28%; width: 620px; }
+  .builder-orbit-two { display: none; }
+  .builder-coordinate { bottom: 25px; right: 7vw; }
   .routes { display: block; padding: 100px 7vw; }
   .route-list { margin-top: 70px; }
   .route { gap: 12px; grid-template-columns: 25px 1fr 20px; }
