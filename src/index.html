@@ -1,17 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Una introducción visual al mundo de la ingeniería aeroespacial.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
+  <title>Órbita | Ingeniería Aeroespacial</title>
 </head>
 
 <body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Órbita, inicio">
+      <span class="brand-mark">O</span>
+      <span>ÓRBITA<span class="brand-dot">.</span></span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="#disciplina">La disciplina</a>
+      <a href="#rutas">Rutas de estudio</a>
+      <a href="#futuro">El futuro</a>
+    </nav>
+    <a class="header-link" href="#explora">Explora <span aria-hidden="true">↗</span></a>
+  </header>
+
   <main>
-    <h1>Hola Mundo</h1>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> Campo de misión / 01</p>
+        <h1>Diseñar lo que<br><em>aún no existe.</em></h1>
+        <p class="hero-intro">La ingeniería aeroespacial convierte la curiosidad en sistemas capaces de cruzar fronteras, atmósferas y generaciones.</p>
+        <a class="primary-button" href="#disciplina">Entrar en órbita <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-visual" aria-label="Avión sobre las nubes">
+        <div class="visual-label visual-label-top">ALT 38,000 FT <span></span></div>
+        <div class="visual-label visual-label-bottom">40.7128° N<br>74.0060° W</div>
+        <div class="visual-caption"><span>Fig. 01</span> / La atmósfera como punto de partida</div>
+      </div>
+    </section>
+
+    <section class="discipline" id="disciplina">
+      <div class="section-heading">
+        <p class="eyebrow"><span class="eyebrow-line"></span> La disciplina</p>
+        <h2>Una ciencia.<br><span>Cinco fronteras.</span></h2>
+      </div>
+      <div class="discipline-content">
+        <p class="large-copy">Desde un ala que desafía la gravedad hasta una sonda que navega entre planetas, cada solución nace en la intersección entre precisión, imaginación y propósito.</p>
+        <div class="stats" aria-label="Datos de la ingeniería aeroespacial">
+          <div class="stat"><strong>01</strong><span>Diseño y<br>propulsión</span></div>
+          <div class="stat"><strong>02</strong><span>Sistemas<br>autónomos</span></div>
+          <div class="stat"><strong>03</strong><span>Ciencia<br>planetaria</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="routes" id="rutas">
+      <div class="routes-intro">
+        <p class="eyebrow"><span class="eyebrow-line"></span> Elige tu vector</p>
+        <h2>¿Hacia<br>dónde vas?</h2>
+        <p>El campo aeroespacial es amplio. Encuentra la pregunta que te mueve y empieza a construir la respuesta.</p>
+      </div>
+      <div class="route-list">
+        <a class="route" href="#futuro"><span class="route-number">01</span><span><strong>Aeronáutica</strong><small>Volar dentro de la atmósfera</small></span><span class="route-arrow">↗</span></a>
+        <a class="route" href="#futuro"><span class="route-number">02</span><span><strong>Astronáutica</strong><small>Explorar más allá de nuestro cielo</small></span><span class="route-arrow">↗</span></a>
+        <a class="route" href="#futuro"><span class="route-number">03</span><span><strong>Aviónica</strong><small>Dar inteligencia a cada misión</small></span><span class="route-arrow">↗</span></a>
+        <a class="route" href="#futuro"><span class="route-number">04</span><span><strong>Propulsión</strong><small>Convertir energía en movimiento</small></span><span class="route-arrow">↗</span></a>
+      </div>
+    </section>
+
+    <section class="future" id="futuro">
+      <div class="future-image" aria-hidden="true"></div>
+      <div class="future-copy" id="explora">
+        <p class="eyebrow"><span class="eyebrow-line"></span> El futuro es ahora</p>
+        <h2>El cielo no<br>es el límite.</h2>
+        <p>La próxima generación de ingenieros diseñará vuelos más limpios, ciudades orbitales y nuevas formas de mirar nuestro planeta.</p>
+        <a class="text-link" href="#inicio">Volver al inicio <span>↑</span></a>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <span>ÓRBITA / 2024—∞</span>
+    <span>Hecho para quienes miran arriba.</span>
+  </footer>
 </body>
 
 </html>
