@@ -218,6 +218,8 @@ h2 span { color: #7c858a; }
 .mission-status strong { animation: status-cycle 6s infinite; color: var(--lime); display: block; font-size: 27px; font-weight: 400; letter-spacing: -.06em; margin-top: 15px; position: absolute; }
 .mission-status .status-orbit { animation-delay: 2s; color: var(--cyan); }
 .mission-status .status-complete { animation-delay: 4s; color: #f3d77b; }
+.mission-status[data-state="preparing"] .status-preparing, .mission-status[data-state="orbit"] .status-orbit, .mission-status[data-state="complete"] .status-complete { animation: none; display: block; opacity: 1; transform: translateY(0); }
+.mission-status[data-state="preparing"] .status-orbit, .mission-status[data-state="preparing"] .status-complete, .mission-status[data-state="orbit"] .status-preparing, .mission-status[data-state="orbit"] .status-complete, .mission-status[data-state="complete"] .status-preparing, .mission-status[data-state="complete"] .status-orbit { display: none; }
 .fuel-readout { border-top: 1px solid rgba(121, 215, 229, .2); padding: 22px 24px; }
 .fuel-readout > div:first-child { align-items: baseline; display: flex; justify-content: space-between; }
 .fuel-readout strong { color: var(--cyan); font-size: 28px; font-weight: 400; }
