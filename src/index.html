@@ -119,21 +119,33 @@
         <h2 id="timeline-title">Cada misión<br><span>abre una puerta.</span></h2>
       </div>
       <div class="timeline-list">
-        <article class="timeline-entry">
+        <article class="timeline-entry timeline-entry-active" data-mission="sputnik" tabindex="0" role="button" aria-pressed="true">
           <span class="timeline-year">1957</span>
           <div><h3>Sputnik 1</h3><p>El primer satélite artificial convierte la órbita terrestre en un nuevo territorio de exploración.</p></div>
           <span class="timeline-status">Órbita baja / Histórico</span>
         </article>
-        <article class="timeline-entry">
+        <article class="timeline-entry" data-mission="apollo" tabindex="0" role="button" aria-pressed="false">
           <span class="timeline-year">1969</span>
           <div><h3>Apollo 11</h3><p>La navegación, el control y la voluntad humana alcanzan la superficie lunar.</p></div>
           <span class="timeline-status">Luna / Histórico</span>
         </article>
-        <article class="timeline-entry">
+        <article class="timeline-entry" data-mission="webb" tabindex="0" role="button" aria-pressed="false">
           <span class="timeline-year">2021</span>
           <div><h3>James Webb</h3><p>Un observatorio desplegable mira más lejos para estudiar el origen de las galaxias.</p></div>
           <span class="timeline-status">L2 / En misión</span>
         </article>
+      </div>
+    </section>
+
+    <section class="mission-compare" aria-labelledby="compare-title">
+      <div class="compare-heading">
+        <p class="eyebrow"><span class="eyebrow-line"></span> Comparador de misión / 10</p>
+        <h2 id="compare-title">Tres misiones.<br><span>Una misma curiosidad.</span></h2>
+      </div>
+      <div class="compare-grid">
+        <article class="compare-card compare-card-active" data-compare="sputnik"><span>SPUTNIK 1 / 1957</span><strong>96 min</strong><small>Periodo orbital</small><p>El primer pulso humano desde el espacio.</p></article>
+        <article class="compare-card" data-compare="apollo"><span>APOLLO 11 / 1969</span><strong>8 días</strong><small>Duración total</small><p>La primera huella en la superficie lunar.</p></article>
+        <article class="compare-card" data-compare="webb"><span>JAMES WEBB / 2021</span><strong>1,5 M km</strong><small>Distancia a L2</small><p>Un ojo infrarrojo hacia el origen del universo.</p></article>
       </div>
     </section>
 
@@ -230,6 +242,31 @@
       </div>
     </section>
 
+    <section class="mission-simulator" id="simulador" aria-labelledby="simulator-title">
+      <div class="simulator-heading">
+        <p class="eyebrow"><span class="eyebrow-line"></span> Simulador de misión / 11</p>
+        <h2 id="simulator-title">Traza tu<br><span>propio destino.</span></h2>
+        <p>Configura los parámetros de vuelo y descubre si tu misión puede alcanzar el siguiente horizonte.</p>
+      </div>
+      <div class="simulator-layout">
+        <form class="simulator-form" id="mission-form">
+          <label>Planeta destino<select id="destination"><option value="luna">Luna</option><option value="marte">Marte</option><option value="europa">Europa</option></select></label>
+          <label>Tipo de propulsión<select id="sim-propulsion"><option value="chemical">Química</option><option value="electric">Eléctrica</option><option value="nuclear">Nuclear térmica</option></select></label>
+          <label>Tipo de órbita<select id="sim-orbit"><option value="leo">LEO</option><option value="meo">MEO</option><option value="geo">GEO</option></select></label>
+          <label>Masa de la nave <output id="mass-output">12.000 kg</output><input id="mass" type="range" min="1000" max="50000" step="1000" value="12000"></label>
+          <label>Distancia <output id="distance-output">384.400 km</output><input id="distance" type="range" min="384400" max="225000000" step="100000" value="384400"></label>
+          <label>Combustible disponible <output id="fuel-output">68%</output><input id="sim-fuel" type="range" min="10" max="100" value="68"></label>
+          <button class="simulator-button" type="submit">Ejecutar simulación <span>↗</span></button>
+        </form>
+        <div class="simulator-result" aria-live="polite">
+          <div class="result-state"><span>ESTADO DE TRAYECTORIA</span><strong id="sim-state">LISTO PARA CALCULAR</strong></div>
+          <div class="result-trajectory"><div class="planet-dot planet-earth"></div><div class="trajectory-curve"><i></i></div><div class="planet-dot planet-target" id="target-planet"></div></div>
+          <div class="result-grid"><div><span>VELOCIDAD NECESARIA</span><strong id="sim-speed">10,9 km/s</strong></div><div><span>COMBUSTIBLE RESTANTE</span><strong id="sim-remaining">54%</strong></div><div><span>TIEMPO ESTIMADO</span><strong id="sim-time">3 días</strong></div><div><span>MASA DE MISIÓN</span><strong id="sim-mass">12.000 kg</strong></div></div>
+          <p id="sim-message">Ajusta los parámetros y lanza una nueva trayectoria.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="academy" aria-labelledby="academy-title">
       <div class="academy-heading">
         <p class="eyebrow"><span class="eyebrow-line"></span> Academia orbital / 09</p>
@@ -246,6 +283,16 @@
       <div class="quiz-panel">
         <div><span class="eyebrow"><span class="eyebrow-line"></span> Prueba de navegación</span><h3>¿Qué necesita un satélite para mantenerse en órbita?</h3></div>
         <details><summary>Ver respuesta <span>↗</span></summary><p>Una velocidad tangencial precisa: la gravedad lo atrae hacia la Tierra mientras su movimiento lo hace caer continuamente alrededor de ella.</p></details>
+      </div>
+      <div class="expert-grid">
+        <article class="expert-card"><span>01 / TRAYECTORIAS</span><h3>Katherine Johnson</h3><p>Sus cálculos hicieron posible que las primeras misiones tripuladas encontraran el camino de regreso a casa.</p></article>
+        <article class="expert-card"><span>02 / PROPULSIÓN</span><h3>Wernher von Braun</h3><p>El desarrollo de los cohetes Saturn V mostró cómo una arquitectura de sistemas puede llevar una idea hasta la Luna.</p></article>
+        <article class="expert-card"><span>03 / SISTEMAS</span><h3>Annie Easley</h3><p>Su trabajo en software y energía ayudó a construir soluciones más eficientes para la exploración espacial.</p></article>
+      </div>
+      <div class="faq-grid">
+        <details><summary>¿Qué estudia la astrodinámica?</summary><p>Analiza el movimiento de los vehículos espaciales bajo la acción de la gravedad y determina las maniobras necesarias para cambiar de órbita.</p></details>
+        <details><summary>¿Por qué se usan distintos materiales?</summary><p>Cada zona de una nave enfrenta cargas, temperatura y radiación diferentes. La selección del material equilibra resistencia, masa y protección.</p></details>
+        <details><summary>¿Qué misión llegará antes a Marte?</summary><p>Las misiones robóticas ya estudian su superficie. Las misiones tripuladas requieren resolver radiación, soporte vital y retorno seguro.</p></details>
       </div>
     </section>
 
@@ -274,8 +321,10 @@
     </section>
 
     <section class="mission-builder" aria-labelledby="builder-title">
+      <div class="meteor-field" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
       <div class="builder-orbit builder-orbit-one"></div>
       <div class="builder-orbit builder-orbit-two"></div>
+      <div class="launch-sequence" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="builder-copy">
         <p class="eyebrow"><span class="eyebrow-line"></span> Próximo lanzamiento / 07</p>
         <h2 id="builder-title">Diseña tu<br><em>propia misión.</em></h2>
